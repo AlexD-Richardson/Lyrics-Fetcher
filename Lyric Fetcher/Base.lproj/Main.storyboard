@@ -1,24 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lDF-l1-vQc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Lyrics Fetcher-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lyric_Fetcher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pZd-BI-2GH">
+                                <rect key="frame" x="16" y="145" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vnZ-5t-l4D">
+                                <rect key="frame" x="16" y="222" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dr1-5r-Asm">
+                                <rect key="frame" x="16" y="116" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCZ-2x-x34">
+                                <rect key="frame" x="16" y="193" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lyrics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gb-Oh-aTl">
+                                <rect key="frame" x="16" y="285" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNb-Kt-Nuo">
+                                <rect key="frame" x="16" y="314" width="343" height="295"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtb-PC-GhL">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="0.0027121113989999998" green="0.0027121113989999998" blue="0.0027121113989999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VZM-oB-Jbe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8gb-Oh-aTl" firstAttribute="leading" secondItem="hNb-Kt-Nuo" secondAttribute="leading" id="0th-NS-uVW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dr1-5r-Asm" secondAttribute="trailing" symbolic="YES" id="3Ru-XQ-g6C"/>
+                            <constraint firstItem="pZd-BI-2GH" firstAttribute="leading" secondItem="QCZ-2x-x34" secondAttribute="leading" id="CkO-p8-nzu"/>
+                            <constraint firstItem="QCZ-2x-x34" firstAttribute="leading" secondItem="vnZ-5t-l4D" secondAttribute="leading" id="Dg5-AG-BOI"/>
+                            <constraint firstItem="dr1-5r-Asm" firstAttribute="leading" secondItem="pZd-BI-2GH" secondAttribute="leading" id="Dkf-y2-iJI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QCZ-2x-x34" secondAttribute="trailing" symbolic="YES" id="GYB-jf-aoZ"/>
+                            <constraint firstItem="vnZ-5t-l4D" firstAttribute="trailing" secondItem="hNb-Kt-Nuo" secondAttribute="trailing" id="HG1-gY-Qyr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8gb-Oh-aTl" secondAttribute="trailing" symbolic="YES" id="SGS-Rv-qie"/>
+                            <constraint firstItem="dr1-5r-Asm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YA8-fC-rQf"/>
+                            <constraint firstItem="vnZ-5t-l4D" firstAttribute="top" secondItem="QCZ-2x-x34" secondAttribute="bottom" constant="8" symbolic="YES" id="Yrs-he-Jac"/>
+                            <constraint firstItem="pZd-BI-2GH" firstAttribute="trailing" secondItem="vnZ-5t-l4D" secondAttribute="trailing" id="ZOG-W6-2SI"/>
+                            <constraint firstItem="QCZ-2x-x34" firstAttribute="top" secondItem="pZd-BI-2GH" secondAttribute="bottom" constant="18" id="eVc-c9-6ej"/>
+                            <constraint firstItem="pZd-BI-2GH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="gpz-eE-wL9"/>
+                            <constraint firstItem="vnZ-5t-l4D" firstAttribute="leading" secondItem="8gb-Oh-aTl" secondAttribute="leading" id="h51-g3-McM"/>
+                            <constraint firstItem="hNb-Kt-Nuo" firstAttribute="leading" secondItem="wtb-PC-GhL" secondAttribute="leading" id="h92-iZ-LuB"/>
+                            <constraint firstAttribute="bottom" secondItem="wtb-PC-GhL" secondAttribute="bottom" constant="20" symbolic="YES" id="hTG-U1-YWn"/>
+                            <constraint firstItem="hNb-Kt-Nuo" firstAttribute="top" secondItem="8gb-Oh-aTl" secondAttribute="bottom" constant="8" symbolic="YES" id="ho8-0d-Hu5"/>
+                            <constraint firstItem="wtb-PC-GhL" firstAttribute="top" secondItem="hNb-Kt-Nuo" secondAttribute="bottom" constant="8" symbolic="YES" id="kBI-kG-XaX"/>
+                            <constraint firstItem="hNb-Kt-Nuo" firstAttribute="trailing" secondItem="wtb-PC-GhL" secondAttribute="trailing" id="tZH-iR-x0X"/>
+                            <constraint firstItem="pZd-BI-2GH" firstAttribute="top" secondItem="dr1-5r-Asm" secondAttribute="bottom" constant="8" symbolic="YES" id="ugk-Bq-bD7"/>
+                            <constraint firstItem="8gb-Oh-aTl" firstAttribute="top" secondItem="vnZ-5t-l4D" secondAttribute="bottom" constant="33" id="w7R-cB-ohV"/>
+                            <constraint firstItem="dr1-5r-Asm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wCr-3j-l6S"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Lyrics Fetcher" largeTitleDisplayMode="always" id="yvI-kb-QjC"/>
+                    <connections>
+                        <outlet property="artistTextField" destination="pZd-BI-2GH" id="Jrz-zW-rKl"/>
+                        <outlet property="lyricsTextView" destination="hNb-Kt-Nuo" id="Zax-Dt-IhY"/>
+                        <outlet property="songTextField" destination="vnZ-5t-l4D" id="fMP-3u-54Y"/>
+                        <outlet property="submitButton" destination="wtb-PC-GhL" id="u9R-J5-Maq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hiV-sS-tEp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lDF-l1-vQc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="v1V-w3-2tm">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2gu-0J-o3g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ihu-Mg-mEA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
